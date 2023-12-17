@@ -3,7 +3,10 @@ import { user } from "./users.model";
 
 
 const createSingleUser = async(data: IUsers)=>{
+    // console.log(data);
+    
     const result = await user.create(data);
+    console.log(result);
     return result
 }
 
