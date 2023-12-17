@@ -30,11 +30,13 @@ const findSingleUser = async(userId: number | string)=>{
 
 
 const updateSingleUser = async(userId: number | string, userData: IUsers)=>{
+    // console.log(userId, userData);
+    
     const existUser = await user.isUserAvailable(userId);
     if (!existUser) {
       throw new Error("User not found");
     }
-    const result = await user.findByIdAndUpdate(
+    const result = await user.findOneAndUpdate(
         {userId},
         {$set: userData},
         {new: true, runValidators: true}
