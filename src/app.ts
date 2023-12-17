@@ -6,7 +6,7 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello dev!')
+  res.send('Hello developer boy!')
 })
 
 export default app
